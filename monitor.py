@@ -24,7 +24,7 @@ def get_hardware_status():
     else:
         print("No GPU detected or GPUtil not supported.")
     
-    print("===========================")
+    print("--- Monitoring Complete ---")
 
 if __name__ == "__main__":
     get_hardware_status()
