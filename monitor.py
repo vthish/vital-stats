@@ -1,30 +1,58 @@
 import psutil
 import GPUtil
+import tkinter as tk
+from tkinter import ttk
 
-def get_hardware_status():
-    print("=== PC Hardware Monitor ===")
+def update_stats():
+    # Update CPU Usage
+    cpu_usage = psutil.cpu_percent(interval=None)
+    cpu_label.config(text=f"CPU Usage: {cpu_usage}%")
     
-    # Get CPU Usage
-    cpu_usage = psutil.cpu_percent(interval=1)
-    print(f"CPU Usage: {cpu_usage}%")
-    
-    # Get RAM Usage
+    # Update RAM Usage
     ram = psutil.virtual_memory()
     ram_used_gb = ram.used // (1024 ** 3)
     ram_total_gb = ram.total // (1024 ** 3)
-    print(f"RAM Usage: {ram.percent}% ({ram_used_gb}GB / {ram_total_gb}GB)")
+    ram_label.config(text=f"RAM Usage: {ram.percent}% ({ram_used_gb}GB / {ram_total_gb}GB)")
     
-    # Get GPU Usage and Temperature
+    # Update GPU Usage and Temperature
     gpus = GPUtil.getGPUs()
     if gpus:
-        for gpu in gpus:
-            print(f"GPU: {gpu.name}")
-            print(f"GPU Load: {gpu.load * 100:.1f}%")
-            print(f"GPU Temperature: {gpu.temperature}C")
+        # Assuming the primary GPU (like the RTX 3050) is at index 0
+        gpu = gpus[0]
+        gpu_info = f"GPU: {gpu.name}\nLoad: {gpu.load * 100:.1f}%\nTemp: {gpu.temperature}°C"
+        gpu_label.config(text=gpu_info)
     else:
-        print("No GPU detected or GPUtil not supported.")
+        gpu_label.config(text="GPU: Not detected")
     
-    print("--- Monitoring Complete ---")
+    # Schedule the update_stats function to run again after 1000ms (1 second)
+    root.after(1000, update_stats)
 
-if __name__ == "__main__":
-    get_hardware_status()
+# --- GUI Setup ---
+root = tk.Tk()
+root.title("Vital Stats Monitor")
+root.geometry("350x250")
+root.resizable(False, False)
+
+# Main Frame for padding
+frame = ttk.Frame(root, padding="20")
+frame.pack(fill=tk.BOTH, expand=True)
+
+# Title Label
+title_label = ttk.Label(frame, text="💻 PC Hardware Monitor", font=("Arial", 14, "bold"))
+title_label.pack(pady=(0, 15))
+
+# Stats Labels
+cpu_label = ttk.Label(frame, text="CPU Usage: --%", font=("Arial", 12))
+cpu_label.pack(pady=5)
+
+ram_label = ttk.Label(frame, text="RAM Usage: --%", font=("Arial", 12))
+ram_label.pack(pady=5)
+
+gpu_label = ttk.Label(frame, text="GPU: --", font=("Arial", 12), justify=tk.CENTER)
+gpu_label.pack(pady=10)
+
+# Initialize the first update
+update_stats()
+
+# Start the application
+root.mainloop()
