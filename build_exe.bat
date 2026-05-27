@@ -1,7 +1,20 @@
 @echo off
-echo Building VitalStats X...
+title VitalStats X Builder
 
-pyinstaller --onefile --windowed --icon=assets/icon.ico vitalstats_x.py
+echo ============================
+echo    Building VitalStats X
+echo ============================
 
-echo Build Complete!
+pyinstaller --onefile ^
+--name "VitalStats_X" ^
+vitalstats_x.py
+
+echo.
+echo ============================
+echo      Build Complete!
+echo ============================
+echo EXE Location:
+echo dist\VitalStats_X.exe
+echo.
+
 pause
