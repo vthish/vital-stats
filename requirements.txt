@@ -1,0 +1,5 @@
+customtkinter
+psutil
+gputil
+pystray
+pillow
