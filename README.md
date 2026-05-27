@@ -9,6 +9,12 @@
 
 ---
 
+# 📌 About
+
+VitalStats X is a modern gaming-style hardware monitoring dashboard built with Python and CustomTkinter. Inspired by ASUS Armoury Crate, the application provides real-time monitoring for CPU, GPU, RAM, Disk, and Network usage through a sleek neon-themed interface designed for gamers and performance enthusiasts.
+
+---
+
 # 🖥 Preview
 
 ![VitalStats X UI](./preview.png)
@@ -21,49 +27,49 @@
 
 - ASUS Armoury Crate inspired design
 - Neon glowing cards
-- Dark gaming theme
-- Professional dashboard layout
+- Professional dark gaming theme
+- Smooth modern layout
 
-## 📊 Live Hardware Monitoring
+## 📊 Real-Time Hardware Monitoring
 
-- CPU usage monitoring
-- RAM usage monitoring
-- GPU usage monitoring
-- Disk usage monitoring
+- CPU Usage Monitoring
+- RAM Usage Monitoring
+- GPU Usage Monitoring
+- Disk Usage Monitoring
 
-## 🌡 Temperature Monitoring
+## 🌡 Sensor Monitoring
 
-- CPU temperature support
-- GPU temperature support
-- Live sensor updates
+- CPU Temperature
+- GPU Temperature
+- Live Sensor Updates
 
 ## 🌐 Network Monitoring
 
-- Upload speed stats
-- Download speed stats
-- Real-time network tracking
+- Upload Statistics
+- Download Statistics
+- Real-Time Network Tracking
 
 ## ⚡ Additional Features
 
-- Live clock
-- System tray minimize
-- Dynamic neon indicators
-- Windows compatible
-- EXE build support
+- Live Clock
+- System Tray Support
+- Dynamic Neon Indicators
+- Windows Optimized
+- EXE Build Support
 
 ---
 
 # 📦 Technologies Used
 
-| Technology    | Purpose                   |
-| ------------- | ------------------------- |
-| Python        | Core programming language |
-| CustomTkinter | Modern gaming UI          |
-| Psutil        | System monitoring         |
-| GPUtil        | GPU monitoring            |
-| PyStray       | System tray support       |
-| Pillow        | Image/icon processing     |
-| PyInstaller   | EXE building              |
+| Technology    | Purpose           |
+| ------------- | ----------------- |
+| Python        | Core Language     |
+| CustomTkinter | Modern UI         |
+| Psutil        | System Monitoring |
+| GPUtil        | GPU Monitoring    |
+| PyStray       | Tray Support      |
+| Pillow        | Image Handling    |
+| PyInstaller   | EXE Building      |
 
 ---
 
@@ -72,23 +78,25 @@
 ```text
 VitalStats-X/
 │
-├── monitor.py
+├── vitalstats_x.py
+├── vitalstats_x.spec
 ├── requirements.txt
 ├── README.md
 ├── build_exe.bat
 │
-├── assets/
-│   ├── icon.ico
-│   └── preview.png
+├── build/
+├── dist/
 │
-└── dist/
+└── assets/
+    ├── icon.ico
+    └── preview.png
 ```
 
 ---
 
 # 🚀 Installation
 
-## 1️⃣ Clone Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/vital-stats.git
@@ -97,7 +105,7 @@ cd vital-stats
 
 ---
 
-## 2️⃣ Install Dependencies
+## Install Requirements
 
 ```bash
 pip install -r requirements.txt
@@ -105,15 +113,15 @@ pip install -r requirements.txt
 
 ---
 
-## 3️⃣ Run Application
+## Run Application
 
 ```bash
-python monitor.py
+python vitalstats_x.py
 ```
 
 ---
 
-# 🔨 Build EXE File
+# 🔨 Build EXE
 
 ## Install PyInstaller
 
@@ -123,7 +131,7 @@ pip install pyinstaller
 
 ---
 
-## Build EXE
+## Build Application
 
 ```bash
 .\build_exe.bat
@@ -134,7 +142,7 @@ pip install pyinstaller
 ## EXE Output
 
 ```text
-dist/monitor.exe
+dist/vitalstats_x.exe
 ```
 
 ---
@@ -153,15 +161,14 @@ pillow
 
 # 🧠 Planned Features
 
-- RGB animated graphs
-- Circular performance gauges
-- FPS monitor
-- Battery analytics
-- Startup with Windows
+- RGB Animated Charts
+- Circular Performance Gauges
+- FPS Monitor
+- Battery Analytics
 - Glassmorphism UI
-- Real-time charts
-- Fan speed monitoring
-- Custom gaming themes
+- Fan Speed Monitoring
+- Real-Time Performance Graphs
+- Gaming Performance Profiles
 
 ---
 
@@ -174,7 +181,7 @@ Fully optimized for:
 
 ---
 
-# 📸 UI Inspiration
+# 🎨 UI Inspiration
 
 Inspired by:
 
@@ -212,11 +219,9 @@ This project is licensed under the MIT License.
 
 ---
 
-# 🔥 Screenshots
+# 🔥 Screenshot
 
-## Dashboard UI
-
-Add your screenshots here:
+Place your preview image here:
 
 ```text
 assets/preview.png
@@ -226,4 +231,4 @@ assets/preview.png
 
 # 🏁 Final Notes
 
-VitalStats X is designed to provide a professional gaming-style hardware monitoring experience for Windows users with a clean modern interface and real-time performance tracking.
+VitalStats X delivers a clean, modern, gaming-inspired desktop monitoring experience with real-time hardware analytics and a professional neon-themed dashboard for Windows users.

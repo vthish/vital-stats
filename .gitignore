@@ -1,0 +1,54 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Build files
+build/
+dist/
+*.spec
+
+# VS Code
+.vscode/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# PyInstaller
+*.manifest
+*.exe
+
+# Python environment
+.python-version
+
+# IDE files
+.idea/
+
+# Cache
+.cache/
+
+# Test cache
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables
+.env
